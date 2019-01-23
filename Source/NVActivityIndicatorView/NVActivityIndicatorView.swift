@@ -356,7 +356,7 @@ public typealias FadeOutAnimation = (UIView, @escaping () -> Void) -> Void
 
 // swiftlint:disable file_length
 /// Activity indicator view with nice animations
-public final class NVActivityIndicatorView: UIView {
+open class NVActivityIndicatorView: UIView {
     // swiftlint:disable identifier_name
     /// Default type. Default value is .BallSpinFadeLoader.
     public static var DEFAULT_TYPE: NVActivityIndicatorType = .ballSpinFadeLoader
@@ -489,11 +489,11 @@ public final class NVActivityIndicatorView: UIView {
 
      - returns: A size indicating the natural size for the receiving view based on its intrinsic properties.
      */
-    public override var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         return CGSize(width: bounds.width, height: bounds.height)
     }
 
-    public override var bounds: CGRect {
+    open override var bounds: CGRect {
         didSet {
             // setup the animation again for the new bounds
             if oldValue != bounds && isAnimating {
